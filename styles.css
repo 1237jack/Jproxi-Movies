@@ -1,98 +1,79 @@
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: black;
+    color: white;
     margin: 0;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-h1 {
+    padding: 0;
     text-align: center;
     position: relative;
-    z-index: 1;
+}
+
+/* Logo Section */
+.logo {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.logo-image {
+    width: 150px;
+    height: auto;
+    border-radius: 15px; /* Make the logo rounded */
+}
+
+/* Movie Catalog Section */
+h1 {
+    font-size: 36px;
+    color: white;
+    margin-top: 20px;
 }
 
 .catalog {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    position: relative;
-    z-index: 1;
+    margin-top: 30px;
 }
 
 .movie {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px;
+    margin: 0 10px;
     text-align: center;
-    width: 150px;
-    transition: transform 0.2s;
-    z-index: 1;
 }
 
 .movie img {
-    max-width: 100%;
-    border-radius: 5px;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px; /* Rounded corners for movie images */
 }
 
-.movie:hover {
-    transform: scale(1.05);
+.movie p {
+    color: white;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Snowflakes Styling */
+#snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
 }
 
 .snowflake {
     position: absolute;
-    top: -10px;
-    z-index: 0;
-    animation: fall 10s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(100vh);
-    }
-}
-
-.logo {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.logo img {
-    max-width: 200px;
-    height: auto;
-    border-radius: 50%; /* Makes the logo circular */
-    overflow: hidden;
-    display: block;
-    margin: 0 auto;
-}
-
-#snowflakes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 0;
-}
-
-#snowflakes .snowflake {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: snow 5s linear infinite;
+    color: white;
+    font-size: 24px;
+    user-select: none;
+    animation: snow 10s linear infinite;
 }
 
 @keyframes snow {
     0% {
-        transform: translateY(-10px);
+        transform: translateY(-100px);
     }
     100% {
         transform: translateY(100vh);
