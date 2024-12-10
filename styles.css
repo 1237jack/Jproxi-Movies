@@ -9,24 +9,16 @@ body {
 
 h1 {
     text-align: center;
-    margin-bottom: 10px;
-}
-
-.logo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.logo img {
-    max-width: 200px;
-    height: auto;
+    margin-top: 20px;
+    font-size: 2em;
+    color: white;
 }
 
 .catalog {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .movie {
@@ -49,39 +41,35 @@ h1 {
     transform: scale(1.05);
 }
 
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.logo img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 15%; /* Rounded edges for the logo */
+}
+
+/* Snowflake styling */
 .snowflake {
     position: fixed;
-    top: 0;
-    color: white;
-    font-size: 1em;
-    z-index: 9999;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background: url('snowflake.png') no-repeat center center;
+    background-size: contain;
     pointer-events: none;
-    animation: snowflakes-fall 10s linear infinite, snowflakes-shake 3s ease-in-out infinite;
+    animation: fall 10s linear infinite;
 }
 
-@keyframes snowflakes-fall {
+@keyframes fall {
     0% {
-        top: -10%;
+        transform: translateY(-10px);
     }
     100% {
-        top: 100%;
-    }
-}
-
-@keyframes snowflakes-shake {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(80px);
-    }
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
+        transform: translateY(100vh);
     }
 }
